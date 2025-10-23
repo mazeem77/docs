@@ -1,0 +1,15 @@
+---
+title: "Database Section"
+---
+
+The system uses PostgreSQL with five main tables:
+
+**challenges** - Challenge metadata, lifecycle state, cryptographic nonces, validator requirements, and submission limits
+
+**miner_submissions** - Submission metadata, file references, multi-bucket storage (miner/ validator/ archive), validation counts, and status tracking
+
+**validation_records** - Individual validator evaluations, detailed score breakdown, evaluation notes, and validator-specific file paths
+
+**submission_nonces** - Cryptographic nonce management with expiration tracking and rate limiting
+
+**validator_api_keys** - API key lifecycle, usage tracking, audit trails, and activation/revocation history
