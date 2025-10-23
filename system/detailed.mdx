@@ -1,0 +1,52 @@
+---
+title: "Detailed Metric Evaluation"
+---
+
+
+![image.png](/images/image.png)
+
+**1.     Functionality Score ( )**
+
+ 
+
+This metric measures the design's functional correctness.
+
+·       **Test Generation & Golden Reference:** The Chip Design Team creates comprehensive test suites and runs them on the official **RISC-V ISA Simulator (SPIKE)** to generate the "golden output."
+
+·       **Design-Under-Test (DUT) Execution:** The same test cases are executed on the miner's design using the EDA Server's **Verilator** tool for simulation.
+
+·       **Scoring:** The  score is determined by comparing the DUT’s results against SPIKE's golden outputs.
+
+Where  is the number of instructions that matched the golden result, and  is the total number of executed instructions.  is a value between 0 and 1.
+
+**2.     Performance Score ( )**
+
+ 
+
+Performance is quantified as **Instructions Per Second (IPS)**, representing the processing throughput.
+
+·       **IPC & Max Clock Speed ( ):** The processor's **Instructions Per Cycle (IPC)** is measured using performance tests. The processor's maximum clock speed, referred to as  (Max Frequency), is determined through timing analysis using **OpenLane**.
+
+·       Performance (IPS): The throughput is calculated as:
+
+·       **Normalization:** This raw IPS value is then normalized against a defined benchmark IPS to yield the 0-1  score (a higher IPS results in a score closer to 1).
+
+ 
+
+ 
+
+**3.     Area Score ( )**
+
+ 
+
+The  score measures the silicon efficiency of the design.
+
+·       **Synthesis & Measurement:** The design is synthesized using **OpenLane (Yosys)** targeting the sky130nm PDK, and the total silicon area is extracted.
+
+·       **Normalization:** The  score is **inversely proportional** to the measured area (a smaller area yields a score closer to 1). This score is normalized against a target area defined by the challenge.
+
+**4.     Power Consumption Score (TBD)**
+
+ 
+
+This metric is currently under development. Once integrated, the  will be inversely proportional to the measured power consumption, normalized against a target power consumption.

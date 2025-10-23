@@ -1,0 +1,27 @@
+---
+title: "Evaluation Pipeline"
+---
+
+**Stage 1 - Functional Verification**
+
+·       Simulates Verilog design against test vectors
+
+·       Uses Verilator for verification
+
+·       Validates functional correctness
+
+·       Generates functionality score
+
+**Stage 2 - Physical Analysis**
+
+·       Synthesizes design using Yosys/OpenLane
+
+·       Calculates silicon area utilization
+
+·       Determines maximum operating frequency
+
+·       Estimates power consumption
+
+·       Generates area, delay, and power scores
+
+**Score Aggregation** - Combines metrics into overall score using weighted formula
