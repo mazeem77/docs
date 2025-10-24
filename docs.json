@@ -71,13 +71,21 @@
             ]
           },
           {
-            "group": "Endpoint examples",
+            "group": "Miner Endpoints",
             "pages": [
               "api-reference/endpoint/active",
               "api-reference/endpoint/check",
               "api-reference/endpoint/generate",
               "api-reference/endpoint/info",
               "api-reference/endpoint/submit"
+            ]
+          },
+          {
+            "group": "Validator Endpoints",
+            "pages": [
+              "api-reference/endpoint/test",
+              "api-reference/endpoint/current",
+              "api-reference/endpoint/score"
             ]
           }
         ]
