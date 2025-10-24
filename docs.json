@@ -17,32 +17,46 @@
             "group": "Getting started",
             "pages": [
               "index",
-              "quickstart",
-              "development"
+              "platform-components",
+              "system-arch",
+              "database",
+              "File Storage System",
+              "system-workflows"
             ]
           },
           {
-            "group": "Customization",
+            "group": "System Workflows",
             "pages": [
-              "essentials/settings",
-              "essentials/navigation"
+              "system-workflows",
+              "system/design-score",
+              "system/batch-distribution",
+              "system/error"
             ]
           },
           {
-            "group": "Writing content",
+            "group": "EDA Server Integration",
             "pages": [
-              "essentials/markdown",
-              "essentials/code",
-              "essentials/images",
-              "essentials/reusable-snippets"
+              "eda",
+              "system/evaluation",
+              "system/performance",
+              "system/validator"
             ]
           },
           {
-            "group": "AI tools",
+            "group": "Scoring Methodology",
             "pages": [
-              "ai-tools/cursor",
-              "ai-tools/claude-code",
-              "ai-tools/windsurf"
+              "scoring",
+              "system/score-method",
+              "system/dynamic-scoring",
+              "system/detailed",
+              "system/security"
+            ]
+          },
+          {
+            "group": "Performance & Scalability",
+            "pages": [
+              "performance",
+              "system/monitoring"
             ]
           }
         ]
@@ -59,10 +73,11 @@
           {
             "group": "Endpoint examples",
             "pages": [
-              "api-reference/endpoint/get",
-              "api-reference/endpoint/create",
-              "api-reference/endpoint/delete",
-              "api-reference/endpoint/webhook"
+              "api-reference/endpoint/active",
+              "api-reference/endpoint/check",
+              "api-reference/endpoint/generate",
+              "api-reference/endpoint/info",
+              "api-reference/endpoint/submit"
             ]
           }
         ]
