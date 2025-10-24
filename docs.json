@@ -34,7 +34,7 @@
             ]
           },
           {
-            "group": "EDA Server Integration",
+            "group": "EDA Server",
             "pages": [
               "eda",
               "system/evaluation",
