@@ -2,6 +2,26 @@
 title: "Dynamic Scoring Formula"
 ---
 
-The individual weights ( ,  ,  ) and the minimum Functionality Threshold ( ) are loaded from the weights.json file.
+The individual weights ($W_{Func}$, $W_{Delay}$, $W_{Area}$) and the minimum Functionality Threshold ($Threshold_{Func}$) are loaded from the `weights.json` file.
 
-•	Constraint: The submission must achieve a minimum Functionality Score ( ) greater than or equal to the dynamic   to receive a non-zero overall score.
+- **Constraint:** The submission must achieve a minimum Functionality Score ($F_c$) greater than or equal to the dynamic $Threshold_{Func}$ to receive a non-zero overall score.
+
+$$
+\text{IF } F_c \ge Threshold_{Func} :
+$$
+
+$$
+O_c = \frac{(W_{Func} \cdot F_c) + (W_{Area} \cdot Area) + (W_{Perf} \cdot P_c)}{Total\_W}
+$$
+
+$$
+\text{IF } F_c < Threshold_{Func} :
+$$
+
+$$
+O_c = 0
+$$
+
+<Note>
+  The power metric is not currently evaluated, as it will be integrated for future challenges, such as the Neural Processing Unit (NPU) development, where power is a critical concern.
+</Note>
