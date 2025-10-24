@@ -1,8 +1,8 @@
 {
   "openapi": "3.1.0",
   "info": {
-    "title": "OpenAPI Plant Store",
-    "description": "A sample API that uses a plant store as an example to demonstrate features in the OpenAPI specification",
+    "title": "Hardware Challenge API",
+    "description": "API specification for Miner and Validator endpoints used in hardware design challenges and validation processes.",
     "license": {
       "name": "MIT"
     },
@@ -10,7 +10,7 @@
   },
   "servers": [
     {
-      "url": "http://sandbox.mintlify.com"
+      "url": "https://api.hardwarechallenge.com"
     }
   ],
   "security": [
@@ -19,72 +19,25 @@
     }
   ],
   "paths": {
-    "/plants": {
+    "/miner/active": {
       "get": {
-        "description": "Returns all plants from the system that the user has access to",
-        "parameters": [
-          {
-            "name": "limit",
-            "in": "query",
-            "description": "The maximum number of results to return",
-            "schema": {
-              "type": "integer",
-              "format": "int32"
-            }
-          }
-        ],
+        "description": "Get currently available challenges for miners.",
         "responses": {
           "200": {
-            "description": "Plant response",
+            "description": "List of active challenges.",
             "content": {
               "application/json": {
                 "schema": {
                   "type": "array",
                   "items": {
-                    "$ref": "#/components/schemas/Plant"
+                    "$ref": "#/components/schemas/Challenge"
                   }
                 }
               }
             }
           },
           "400": {
-            "description": "Unexpected error",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Error"
-                }
-              }
-            }
-          }
-        }
-      },
-      "post": {
-        "description": "Creates a new plant in the store",
-        "requestBody": {
-          "description": "Plant to add to the store",
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/NewPlant"
-              }
-            }
-          },
-          "required": true
-        },
-        "responses": {
-          "200": {
-            "description": "plant response",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Plant"
-                }
-              }
-            }
-          },
-          "400": {
-            "description": "unexpected error",
+            "description": "Invalid request or authentication failure.",
             "content": {
               "application/json": {
                 "schema": {
@@ -96,57 +49,178 @@
         }
       }
     },
-    "/plants/{id}": {
-      "delete": {
-        "description": "Deletes a single plant based on the ID supplied",
+    "/miner/info": {
+      "get": {
+        "description": "Retrieve challenge details, time remaining, and file locations.",
         "parameters": [
           {
-            "name": "id",
-            "in": "path",
-            "description": "ID of plant to delete",
+            "name": "challenge_id",
+            "in": "query",
+            "description": "Unique identifier of the challenge.",
             "required": true,
             "schema": {
-              "type": "integer",
-              "format": "int64"
+              "type": "string"
             }
           }
         ],
         "responses": {
-          "204": {
-            "description": "Plant deleted",
-            "content": {}
-          },
-          "400": {
-            "description": "unexpected error",
+          "200": {
+            "description": "Challenge information retrieved successfully.",
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Error"
+                  "$ref": "#/components/schemas/ChallengeInfo"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Challenge not found."
+          }
+        }
+      }
+    },
+    "/miner/generate-submission-id": {
+      "post": {
+        "description": "Generate a unique submission ID for solution upload.",
+        "responses": {
+          "200": {
+            "description": "Submission ID generated successfully.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "submission_id": {
+                      "type": "string",
+                      "description": "Unique identifier for the submission."
+                    }
+                  }
                 }
               }
             }
           }
         }
       }
-    }
-  },
-  "webhooks": {
-    "/plant/webhook": {
+    },
+    "/miner/submit": {
       "post": {
-        "description": "Information about a new plant added to the store",
+        "description": "Upload hardware design solution with cryptographic authentication.",
         "requestBody": {
-          "description": "Plant added to the store",
+          "description": "Hardware solution package and authentication data.",
+          "required": true,
           "content": {
-            "application/json": {
+            "multipart/form-data": {
               "schema": {
-                "$ref": "#/components/schemas/NewPlant"
+                "type": "object",
+                "properties": {
+                  "submission_id": {
+                    "type": "string"
+                  },
+                  "auth_token": {
+                    "type": "string"
+                  },
+                  "design_file": {
+                    "type": "string",
+                    "format": "binary"
+                  }
+                },
+                "required": ["submission_id", "auth_token", "design_file"]
               }
             }
           }
         },
         "responses": {
           "200": {
-            "description": "Return a 200 status to indicate that the data was received successfully"
+            "description": "Submission received successfully."
+          },
+          "400": {
+            "description": "Invalid submission or authentication error."
+          }
+        }
+      }
+    },
+    "/miner/status": {
+      "get": {
+        "description": "Track evaluation progress and retrieve submission scores.",
+        "parameters": [
+          {
+            "name": "submission_id",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Submission status and scores retrieved successfully.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/SubmissionStatus"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/validator/testcases/download": {
+      "get": {
+        "description": "Download validator-specific test suites.",
+        "responses": {
+          "200": {
+            "description": "Test cases downloaded successfully.",
+            "content": {
+              "application/zip": {
+                "schema": {
+                  "type": "string",
+                  "format": "binary"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/validator/batch/current": {
+      "get": {
+        "description": "Retrieve the current submission batch for evaluation.",
+        "responses": {
+          "200": {
+            "description": "Current batch retrieved successfully.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Batch"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/validator/submit_score": {
+      "post": {
+        "description": "Submit evaluation results with comprehensive metrics.",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ScoreSubmission"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Score submitted successfully."
+          },
+          "400": {
+            "description": "Invalid score submission data."
           }
         }
       }
@@ -154,56 +228,73 @@
   },
   "components": {
     "schemas": {
-      "Plant": {
-        "required": [
-          "name"
-        ],
+      "Challenge": {
         "type": "object",
         "properties": {
-          "name": {
-            "description": "The name of the plant",
+          "id": {
             "type": "string"
           },
-          "tag": {
-            "description": "Tag to specify the type",
+          "title": {
             "type": "string"
+          },
+          "description": {
+            "type": "string"
+          },
+          "deadline": {
+            "type": "string",
+            "format": "date-time"
           }
         }
       },
-      "NewPlant": {
-        "allOf": [
-          {
-            "$ref": "#/components/schemas/Plant"
-          },
-          {
-            "required": [
-              "id"
-            ],
-            "type": "object",
-            "properties": {
-              "id": {
-                "description": "Identification number of the plant",
-                "type": "integer",
-                "format": "int64"
-              }
-            }
-          }
-        ]
-      },
-      "Error": {
-        "required": [
-          "error",
-          "message"
-        ],
+      "ChallengeInfo": {
         "type": "object",
         "properties": {
-          "error": {
-            "type": "integer",
-            "format": "int32"
-          },
-          "message": {
-            "type": "string"
+          "id": { "type": "string" },
+          "details": { "type": "string" },
+          "time_remaining": { "type": "string" },
+          "file_locations": {
+            "type": "array",
+            "items": { "type": "string", "format": "uri" }
           }
+        }
+      },
+      "SubmissionStatus": {
+        "type": "object",
+        "properties": {
+          "submission_id": { "type": "string" },
+          "status": { "type": "string" },
+          "score": { "type": "number", "format": "float" },
+          "progress": { "type": "integer", "format": "int32" }
+        }
+      },
+      "Batch": {
+        "type": "object",
+        "properties": {
+          "batch_id": { "type": "string" },
+          "submissions": {
+            "type": "array",
+            "items": { "type": "string" }
+          }
+        }
+      },
+      "ScoreSubmission": {
+        "type": "object",
+        "properties": {
+          "batch_id": { "type": "string" },
+          "submission_id": { "type": "string" },
+          "metrics": {
+            "type": "object",
+            "additionalProperties": { "type": "number" }
+          }
+        },
+        "required": ["batch_id", "submission_id", "metrics"]
+      },
+      "Error": {
+        "type": "object",
+        "required": ["error", "message"],
+        "properties": {
+          "error": { "type": "integer" },
+          "message": { "type": "string" }
         }
       }
     },
