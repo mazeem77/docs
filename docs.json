@@ -73,10 +73,10 @@
             "group": "Miner Endpoints",
             "pages": [
               "api-reference/endpoint/active",
-              "api-reference/endpoint/check",
-              "api-reference/endpoint/generate",
               "api-reference/endpoint/info",
-              "api-reference/endpoint/submit"
+              "api-reference/endpoint/generate",
+              "api-reference/endpoint/submit",
+              "api-reference/endpoint/check"
             ]
           },
           {
@@ -113,13 +113,13 @@
     "links": [
       {
         "label": "Support",
-        "href": "mailto:hi@mintlify.com"
+        "href": "mailto:contact@tatsuecosystem.io"
       }
     ],
     "primary": {
       "type": "button",
       "label": "Dashboard",
-      "href": "https://dashboard.mintlify.com"
+      "href": "https://chipforge.io/"
     }
   },
   "contextual": {
@@ -136,9 +136,9 @@
   },
   "footer": {
     "socials": {
-      "x": "https://x.com/mintlify",
-      "github": "https://github.com/mintlify",
-      "linkedin": "https://linkedin.com/company/mintlify"
+      "x": "https://x.com/TatsuEcosystem",
+      "github": "https://github.com/TatsuProject/ChipForge_SN84",
+      "website": "https://chipforge.io/"
     }
   }
 }
