@@ -63,7 +63,7 @@
             ]
           },
           {
-            "group": "Incentive Mechanisms and Game Theory",
+            "group": "Incentive Mechanisms & Game Theory",
             "pages": [
               "whitepaper/incentive/index",
               "whitepaper/incentive/loop",
@@ -71,7 +71,7 @@
             ]
           },
           {
-            "group": "Current Progress and Achievements",
+            "group": "Current Progress & Achievements",
             "pages": [
               "whitepaper/progress/index",
               "whitepaper/progress/infra",
@@ -90,7 +90,7 @@
             ]
           },
           {
-            "group": "Economic Model and Market Analysis",
+            "group": "Economic Model & Market Analysis",
             "pages": [
               "whitepaper/economic/index",
               "whitepaper/economic/market",
