@@ -16,7 +16,7 @@
           {
             "group": "Executive Summary",
             "pages": [
-              "whitepaper/index",
+              "index",
               "whitepaper/intro"
             ]
           },
@@ -104,7 +104,7 @@
           {
             "group": "Getting started",
             "pages": [
-              "index",
+              "system/index",
               "platform-components",
               "system-arch",
               "database",
