@@ -1,11 +1,40 @@
 ---
-title: "Summary"
+title: "Introduction"
 ---
 
-The semiconductor industry stands at a critical inflection point. Despite unprecedented demand for specialized silicon, particularly for **Artificial Intelligence (AI) workloads**, the design and manufacturing of chips remains highly centralized. A handful of corporations control the majority of design intellectual property and fabrication capacity. This centralization creates bottlenecks in innovation, increases costs exponentially, and limits access to custom silicon solutions for the vast majority of organizations.
 
-ChipForge (Subnet SN84) emerges as a revolutionary solution to this fundamental challenge. By leveraging the Bittensor network's decentralized intelligence infrastructure, ChipForge transforms semiconductor design from a closed, capital-intensive process into an **open, competitive marketplace of innovation**. Our subnet enables global participation in chip design through a unique combination of challenge-driven development, automated validation, and cryptocurrency-based incentive mechanisms.
+The Chipforge Platform coordinates distributed hardware design evaluation across a decentralized network. Miners submit hardware designs in response to challenges, while validators independently assess these submissions using industry-standard EDA tools.
 
-A key innovative point is our focus on **Hardware-Software Co-Design**, particularly for **Edge AI accelerators** (Neural Processing Units or NPUs). Designing for the energy, latency, and size constraints of the edge demands a synergistic approach: co-optimizing the specialized hardware (e.g., custom compute blocks and acceleration logic) alongside the software stack (e.g., compilers and runtime environments) that drives it. ChipForge is structured to incentivize this holistic optimization.
+<img
+  style={{ borderRadius:"0.5rem" }}
+  src="/images/Screenshot2025-10-24at5.56.59PM.png"
+/>
 
-The ChipForge ecosystem represents the convergence of three transformative technologies: decentralized networks, artificial intelligence, and open-source hardware. Through our platform, miners compete to design optimal **RISC-V** (an open-source Instruction Set Architecture or ISA) based processors, edge AI accelerators, and specialized compute blocks. Validators ensure design quality through open-source industry-standard **Electronic Design Automation (EDA)** tools like **Verilator** and **OpenLane**. The result is not theoretical models or simulations, but synthesizable **Register Transfer Level (RTL)** designs with verified Power, Performance, and Area (**PPA**) metrics, ready for FPGA deployment and ultimately silicon fabrication.
+## Technical Documentation
+
+<Columns cols={2}>
+  <Card title="Platform Components" icon="computer" href="/platform-components">
+    Explore the core modules that make up the challenge platform, including the miner and validator systems.
+  </Card>
+  <Card title="System Architecture" icon="solar-system" href="/system-arch">
+    Understand how different services—frontend, backend, and EDA servers—interact within the challenge ecosystem.
+  </Card>
+  <Card title="Database Section" icon="database" href="/database">
+    Learn how data such as submissions, scores, and challenge metadata are structured and stored.
+  </Card>
+  <Card title="File Storage System" icon="file" href="/file-storage">
+    Discover how design files, logs, and test outputs are managed, stored, and accessed securely.
+  </Card>
+  <Card title="System Workflows" icon="server" href="/system-workflows">
+    Trace the complete workflow from submission generation to validation and scoring automation.
+  </Card>
+  <Card title="EDA Server Integration" icon="credit-card-front" href="/eda">
+    See how the platform integrates with EDA tools like Verilator and OpenLane for hardware simulation and synthesis.
+  </Card>
+  <Card title="Scoring Methodology" icon="input-numeric" href="/scoring">
+    Review the scoring formulas for functionality, performance, and area to understand evaluation metrics.
+  </Card>
+  <Card title="Performance & Scalability" icon="sparkles" href="/performance">
+    Explore system optimizations ensuring scalable evaluations and efficient resource usage.
+  </Card>
+</Columns>
