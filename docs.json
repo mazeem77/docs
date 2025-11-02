@@ -32,10 +32,10 @@
           {
             "group": "The ChipForge Solution",
             "pages": [
-              "whitepaper/solution",
-              "whitepaper/solution",
-              "whitepaper/solution",
-              "whitepaper/solution"
+              "whitepaper/solution/index",
+              "whitepaper/solution/arch",
+              "whitepaper/solution/challenge",
+              "whitepaper/solution/metrics"
             ]
           },
           {
