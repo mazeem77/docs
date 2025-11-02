@@ -23,10 +23,10 @@
           {
             "group": "Problem Statement",
             "pages": [
-              "whitepaper/problem",
-              "whitepaper/problem",
-              "whitepaper/problem",
-              "whitepaper/problem"
+              "whitepaper/problem/index",
+              "whitepaper/problem/monoply",
+              "whitepaper/problem/edge",
+              "whitepaper/problem/verification"
             ]
           },
           {
