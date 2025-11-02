@@ -81,8 +81,12 @@
           {
             "group": "Roadmap",
             "pages": [
-              "whitepaper/roadmap",
-              "whitepaper/roadmap"
+              "whitepaper/roadmap/index",
+              "whitepaper/roadmap/ph1",
+              "whitepaper/roadmap/ph2",
+              "whitepaper/roadmap/ph3",
+              "whitepaper/roadmap/ph4",
+              "whitepaper/roadmap/ph5"
             ]
           },
           {
