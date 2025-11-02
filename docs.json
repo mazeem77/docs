@@ -41,11 +41,10 @@
           {
             "group": "Technical Architecture",
             "pages": [
-              "whitepaper/technical",
-              "whitepaper/technical",
-              "whitepaper/technical",
-              "whitepaper/technical",
-              "whitepaper/technical"
+              "whitepaper/technical/index",
+              "whitepaper/technical/challenge",
+              "whitepaper/technical/miner",
+              "whitepaper/technical/validator"
             ]
           },
           {

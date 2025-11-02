@@ -1,0 +1,13 @@
+---
+title: 'Challenge Server Architecture'
+---
+
+The Challenge Server implements a sophisticated orchestration system managing the complete lifecycle of design challenges:
+
+API Layer: RESTful endpoints implemented in FastAPI providing separate interfaces for miners and validators. Authentication via Ed25519 signatures ensures cryptographic security while rate limiting prevents abuse.
+
+Database Layer: PostgreSQL database managing challenge metadata and specifications, miner submissions and validation records, cryptographic nonces for replay prevention, and API keys for validator authentication.
+
+Storage Layer: AWS S3 integration providing hierarchical organization of design files, time-limited pre-signed URLs for secure access, complete audit trails of all operations, and multi-region replication for reliability.
+
+Processing Layer: Asynchronous task processing via Celery combined with Redis enabling batch formation for validator distribution, score aggregation from multiple validators, automated challenge lifecycle management, and real-time leaderboard updates.

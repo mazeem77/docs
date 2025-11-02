@@ -1,10 +1,21 @@
 ---
 title: "Technical Architecture"
+description: "System Overview"
 ---
 
-## **4.1 System Overview**
-
 The ChipForge platform operates as a distributed system with clearly defined interfaces and responsibilities. The ecosystem integrates external clients (miners and validators), the ChipForge platform (Challenge Server with supporting services), and external services (GitHub, S3, PostgreSQL, and Blockchain).
+
+<Columns cols={2}>
+  <Card title="Challenge Server Architecture" icon="computer" href="/whitepaper/technical/challenge">
+    The Challenge Server implements a sophisticated orchestration system managing the complete lifecycle of design challenges
+  </Card>
+  <Card title="Miner Workflow" icon="solar-system" href="/whitepaper/technical/miner">
+    Miners interact with the ChipForge ecosystem through a well-defined workflow
+  </Card>
+  <Card title="Validator Operations" icon="database" href="/whitepaper/technical/validator">
+    Validators provide the critical function of objective design evaluation.
+  </Card>
+</Columns>
 
 ## **4.2 Challenge Server Architecture**
 
@@ -23,15 +34,10 @@ Processing Layer: Asynchronous task processing via Celery combined with Redis en
 Miners interact with the ChipForge ecosystem through a well-defined workflow:
 
 1. Discovery Phase: Query active challenges and download specifications
-
 2. Design Phase: Develop RTL implementations meeting challenge requirements
-
 3. Validation Phase: Local testing using provided testbenches
-
 4. Submission Phase: Upload designs with cryptographic signatures
-
 5. Evaluation Phase: Monitor validation progress and scores
-
 6. Reward Phase: Receive TAO tokens for winning designs
 
 The platform supports both human designers using traditional EDA tools and AI-powered systems generating RTL through large language models. This hybrid approach leverages human creativity for architectural innovations while utilizing AI for optimization and parameter tuning.
