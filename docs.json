@@ -65,15 +65,17 @@
           {
             "group": "Incentive Mechanisms and Game Theory",
             "pages": [
-              "whitepaper/incentive",
-              "whitepaper/incentive"
+              "whitepaper/incentive/index",
+              "whitepaper/incentive/loop",
+              "whitepaper/incentive/game"
             ]
           },
           {
             "group": "Current Progress and Achievements",
             "pages": [
-              "whitepaper/progress",
-              "whitepaper/progress"
+              "whitepaper/progress/index",
+              "whitepaper/progress/infra",
+              "whitepaper/progress/risc"
             ]
           },
           {
