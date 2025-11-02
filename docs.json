@@ -88,8 +88,10 @@
           {
             "group": "Economic Model and Market Analysis",
             "pages": [
-              "whitepaper/economic",
-              "whitepaper/economic"
+              "whitepaper/economic/index",
+              "whitepaper/economic/market",
+              "whitepaper/economic/analysis",
+              "whitepaper/economic/creation"
             ]
           },
           {
