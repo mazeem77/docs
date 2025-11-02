@@ -56,8 +56,10 @@
           {
             "group": "Evaluation Methodology",
             "pages": [
-              "whitepaper/methodology",
-              "whitepaper/methodology"
+              "whitepaper/methodology/index",
+              "whitepaper/methodology/normal",
+              "whitepaper/methodology/dynamic",
+              "whitepaper/methodology/detailed"
             ]
           },
           {

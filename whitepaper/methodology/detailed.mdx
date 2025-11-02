@@ -1,0 +1,44 @@
+---
+title: "Detailed Metric Evaluation"
+---
+
+### 1. Functionality Score ((F_c))
+
+This metric measures the design's functional correctness.
+
+- **Test Generation & Golden Reference:** The Chip Design Team creates comprehensive test suites and runs them on the official **RISC-V ISA Simulator (SPIKE)** to generate the "golden output."
+- **Design-Under-Test (DUT) Execution:** The same test cases are executed on the miner's design using the EDA Server's **Verilator** tool for simulation.
+- **Scoring:** The (F_c) score is determined by comparing the DUT’s results against SPIKE's golden outputs.
+
+$$
+F_c = \frac{N_{correct}}{N_{total}}
+$$
+
+Where\
+(N\_correct) is the number of instructions that matched the golden result, and\
+(N\_total) is the total number of executed instructions.\
+(F_c) is a value between 0 and 1.
+
+### 2. Performance Score ((P_c))
+
+Performance is quantified as **Instructions Per Second (IPS)**, representing the processing throughput.
+
+- **IPC & Max Clock Speed ((F\_))**: The processor's **Instructions Per Cycle (IPC)** is measured using performance tests. The processor's maximum clock speed, referred to as (F\_max) (Max Frequency), is determined through timing analysis using **OpenLane**.
+- **Performance (IPS):** The throughput is calculated as:
+
+$$
+IPS = IPC \times F_{max}
+$$
+
+- **Normalization:** This raw IPS value is then normalized against a defined benchmark IPS to yield the 0–1 (P_c) score (a higher IPS results in a score closer to 1).
+
+### 3. Area Score ($Area$)
+
+The $Area$ score measures the silicon efficiency of the design.
+
+- **Synthesis & Measurement:** The design is synthesized using **OpenLane (Yosys)** targeting the sky130nm PDK, and the total silicon area is extracted.
+- **Normalization:** The $Area$ score is **inversely proportional** to the measured area (a smaller area yields a score closer to 1). This score is normalized against a target area defined by the challenge.
+
+### 4. Power Consumption Score (TBD)
+
+This metric is currently under development. Once integrated, the $Score_{Power}$ will be **inversely proportional** to the measured power consumption, normalized against a target power consumption.
