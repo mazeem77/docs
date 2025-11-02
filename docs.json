@@ -10,8 +10,96 @@
   "favicon": "/favicon.svg",
   "navigation": {
     "tabs": [
+       {
+        "tab": "White Paper",
+        "groups": [
+          {
+            "group": "Executive Summary",
+            "pages": [
+              "whitepaper/index",
+              "whitepaper/intro"
+            ]
+          },
+          {
+            "group": "Problem Statement",
+            "pages": [
+              "whitepaper/problem",
+              "whitepaper/problem",
+              "whitepaper/problem",
+              "whitepaper/problem"
+            ]
+          },
+          {
+            "group": "The ChipForge Solution",
+            "pages": [
+              "whitepaper/solution",
+              "whitepaper/solution",
+              "whitepaper/solution",
+              "whitepaper/solution"
+            ]
+          },
+          {
+            "group": "Technical Architecture",
+            "pages": [
+              "whitepaper/technical",
+              "whitepaper/technical",
+              "whitepaper/technical",
+              "whitepaper/technical",
+              "whitepaper/technical"
+            ]
+          },
+          {
+            "group": "Hardware Development Framework",
+            "pages": [
+              "whitepaper/framework",
+              "whitepaper/framework"
+            ]
+          },
+          {
+            "group": "Evaluation Methodology",
+            "pages": [
+              "whitepaper/methodology",
+              "whitepaper/methodology"
+            ]
+          },
+          {
+            "group": "Incentive Mechanisms and Game Theory",
+            "pages": [
+              "whitepaper/incentive",
+              "whitepaper/incentive"
+            ]
+          },
+          {
+            "group": "Current Progress and Achievements",
+            "pages": [
+              "whitepaper/progress",
+              "whitepaper/progress"
+            ]
+          },
+          {
+            "group": "Roadmap",
+            "pages": [
+              "whitepaper/roadmap",
+              "whitepaper/roadmap"
+            ]
+          },
+          {
+            "group": "Economic Model and Market Analysis",
+            "pages": [
+              "whitepaper/economic",
+              "whitepaper/economic"
+            ]
+          },
+          {
+            "group": "Conclusion",
+            "pages": [
+              "whitepaper/conclusion"
+            ]
+          }
+        ]
+      },
       {
-        "tab": "Guides",
+        "tab": "Technical",
         "groups": [
           {
             "group": "Getting started",

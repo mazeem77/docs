@@ -1,0 +1,11 @@
+---
+title: "The Iterative Hardware Development Framework"
+---
+
+ChipForge employs a rigorous, two-phased **Challenge Decomposition Framework** designed to break down the daunting complexity of advanced semiconductor development into manageable, competitive sprints. This approach ensures not only functional correctness but also continuous, market-driven performance optimization.
+
+The process begins with **Sequential Extension Integration**, where the network collaboratively builds the core architecture. Development is layered sequentially based on the **RISC-V Instruction Set Architecture (ISA)**, with the winning, verified Intellectual Property (IP) from one challenge immediately becoming the mandatory base for the next. For instance, the creation of a secure Edge AI processor begins by establishing the base **RV32I core**, which then progresses to integrating extensions like **RV32C** (for code density) and **RV32M** (for arithmetic capability), culminating in the integration of specialized **RV32K Cryptography extensions** for security.
+
+Once a functionally complete design is achieved (e.g., a 100% correct RV32IMCK core), the platform transitions to **Continuous Optimization**. Here, the competition shifts its focus entirely to refining the chip's performance metrics. New challenges are issued against the verified IP, requiring miners to reduce **Area**, increase **Performance**, or lower **Power** consumption—the core PPA metrics. These optimization objectives are strictly defined and weighted via a digital configuration file (weights.json), allowing the ChipForge community to prioritize specific improvements based on real-time market needs (e.g., heavily weighting for ultra-low power consumption for a new IoT device).
+
+Every challenge, whether for functional integration or optimization, is governed by a **comprehensive specification** detailing exact Functional Requirements, mandatory **PPA Targets**, required silicon **Technology Node**, and the objective Validation Criteria, ensuring transparency and reproducibility throughout the entire hardware development lifecycle.

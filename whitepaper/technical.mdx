@@ -1,0 +1,47 @@
+---
+title: "Technical Architecture"
+---
+
+## **4.1 System Overview**
+
+The ChipForge platform operates as a distributed system with clearly defined interfaces and responsibilities. The ecosystem integrates external clients (miners and validators), the ChipForge platform (Challenge Server with supporting services), and external services (GitHub, S3, PostgreSQL, and Blockchain).
+
+## **4.2 Challenge Server Architecture**
+
+The Challenge Server implements a sophisticated orchestration system managing the complete lifecycle of design challenges:
+
+API Layer: RESTful endpoints implemented in FastAPI providing separate interfaces for miners and validators. Authentication via Ed25519 signatures ensures cryptographic security while rate limiting prevents abuse.
+
+Database Layer: PostgreSQL database managing challenge metadata and specifications, miner submissions and validation records, cryptographic nonces for replay prevention, and API keys for validator authentication.
+
+Storage Layer: AWS S3 integration providing hierarchical organization of design files, time-limited pre-signed URLs for secure access, complete audit trails of all operations, and multi-region replication for reliability.
+
+Processing Layer: Asynchronous task processing via Celery combined with Redis enabling batch formation for validator distribution, score aggregation from multiple validators, automated challenge lifecycle management, and real-time leaderboard updates.
+
+## **4.3 Miner Workflow**
+
+Miners interact with the ChipForge ecosystem through a well-defined workflow:
+
+1. Discovery Phase: Query active challenges and download specifications
+
+2. Design Phase: Develop RTL implementations meeting challenge requirements
+
+3. Validation Phase: Local testing using provided testbenches
+
+4. Submission Phase: Upload designs with cryptographic signatures
+
+5. Evaluation Phase: Monitor validation progress and scores
+
+6. Reward Phase: Receive TAO tokens for winning designs
+
+The platform supports both human designers using traditional EDA tools and AI-powered systems generating RTL through large language models. This hybrid approach leverages human creativity for architectural innovations while utilizing AI for optimization and parameter tuning.
+
+## **4.4 Validator Operations**
+
+Validators provide the critical function of objective design evaluation:
+
+Functional Verification: Using Verilator, validators simulate designs against comprehensive test suites containing millions of instructions. Results are compared against golden references to determine functional correctness.
+
+Synthesis Analysis: Employing Yosys and OpenLane, validators synthesize designs to gate-level netlists, extracting accurate area metrics and timing characteristics.
+
+Score Calculation: Combining individual metrics using challenge-specific weights to generate overall scores that reflect the relative importance of different optimization objectives.

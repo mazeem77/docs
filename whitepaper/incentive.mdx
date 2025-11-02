@@ -1,0 +1,21 @@
+---
+title: "Incentive Mechanisms and Game Theory"
+description: "Description of your new file."
+---
+
+The ChipForge economic model is built on the robust, competitive framework of the Bittensor network, strategically designed to align all participant incentives—Miners, Validators, and Challenge Creators—with the core objective: the rapid production of high-quality, verified open-source hardware IP.
+
+### **The Continuous Optimization Loop (Winner-Takes-All Emissions)**
+
+The platform utilizes a **Winner-Takes-All** reward structure that is applied continuously, ensuring constant effort and iterative improvement within the network:
+
+- **Real-Time Emission:** Unlike traditional contests, rewards (TAO emissions) are not paid at a single endpoint. Instead, emissions are **granted in real-time** to the Miner whose design currently holds the highest verified PPA+F score above the challenge's threshold.
+- **Instantaneous Competition:** If a second Miner submits an objectively better design (a higher PPA+F score), the emission stream **immediately switches** to that new winning Miner. This mechanism financially incentivizes a relentless pursuit of optimization, as the reward stream follows the globally best design at all times.
+- **Mandatory Improvement Rule:** To ensure a stable but continuously advancing design, a Miner who wins the emission is guaranteed that reward for a minimum of 48 hours, provided their score remains the highest. **However, after that 48-hour period, the current winning Miner must submit an even higher-scoring solution than their previous best to remain eligible for the emission stream.** This rule explicitly enforces constant improvement and discourages complacency, continually pushing the performance frontier of the verified IP.
+
+### **Game-Theoretic Alignment and Integrity**
+
+This competitive structure guarantees that competition translates directly into collective progress:
+
+- **Convergence to Optimality:** The strict PPA+F scoring mechanism, paired with the mandatory improvement rule, guarantees that design submissions are continuously driven toward **Pareto-optimal solutions**—the ideal balance of performance, area, and power for the specified function.
+- **Integrity Enforcement:** Validator integrity is protected through the Bittensor network's inherent **Slashing Mechanisms** and a system of **Reputation and Stake**, which rewards accurate scoring and financially penalizes non-compliance. Sybil resistance is maintained through the significant computational cost required to execute the required EDA toolchains for functional verification.

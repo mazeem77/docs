@@ -1,0 +1,31 @@
+---
+title: "Roadmap: From Processors to AI Accelerators"
+---
+
+This section details the structured, four-phase development plan for the SN84 Subnet, focusing on the progression from foundational processor development to advanced Edge AI System-on-Chip (SoC) realization. The roadmap incorporates decentralized development via the Bittensor framework to accelerate technical milestones.
+
+### **Phase 1: RISC-V Core Finalization (Target: Mid-November)**
+
+The project commences with the definitive establishment of the core processing unit. The objective is the complete specification and finalization of the **RV32IMCK IP core**. This foundational element will incorporate the standard RISC-V RV32 instruction set, augmented by the Integer (I), Multiply/Divide (M), Compressed (C), and essential Cryptography (K) extensions. Completion of this phase delivers the verified hardware foundation necessary for all subsequent integration and software efforts.
+
+### **Phase 2: NPU Development (Target: By February 2026)**
+
+Following core finalization, development transitions to the specialized Neural Processing Unit (NPU). This phase utilizes the **Google Coral NPU architecture as a verified baseline**. The core activity is the technical benchmarking and optimization of the architecture to achieve superior **PPA (Power, Performance, Area) metrics**. A primary technical focus involves custom optimization of the NPU's Matrix Execution Unit to enhance performance for deep learning workloads, ensuring alignment with emerging RISC-V matrix extension standards.
+
+### **Phase 3: RTOS Integration and Verification (Target: By Feb 2026)**
+
+This phase is executed **concurrently** with NPU development to optimize the overall schedule. The objective is to achieve reliable software enablement via **RTOS support** (e.g., FreeRTOS or Zephyr) on the finalized RV32IMCK core.
+
+### **Phase 4: System-on-Chip Integration (Target: Post-Feb 2026)**
+
+Phase 4 constitutes the critical system assembly and verification stage, dependent upon the successful, independent completion of both NPU optimization and RTOS enablement. This phase integrates all primary components into the final SoC architecture:
+
+- The **Main Core** (RV32IMCK with validated RTOS).
+- The **Optimized NPU**.
+- Essential **OpenCores Peripherals** (including communication interfaces such as I2C, SPI, UART, and Ethernet).
+
+The primary engineering challenge is the unified implementation and verification of an on-chip interconnect standard (such as AXI or Wishbone) to guarantee high-throughput and reliable data flow between all intellectual property (IP) blocks.
+
+### **Phase 5: Tape-out and Fabrication Readiness (Target: November 2026)**
+
+The final phase is dedicated to transitioning the design to manufacturing. This involves comprehensive, final design verification and quality assurance checks across the entire integrated SoC. Successful completion culminates in the submission of the final, verified **GDSII** file for the fabrication process, marking the conclusion of the core design and development cycle.

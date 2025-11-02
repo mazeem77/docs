@@ -1,0 +1,23 @@
+---
+title: "Current Progress and Achievements"
+---
+
+ChipForge has successfully moved beyond the conceptual stage, establishing a production-ready decentralized hardware design platform and achieving significant architectural milestones through the network's initial challenges. Our focus has been on building a robust infrastructure and securing foundational, high-value RISC-V Intellectual Property (IP).
+
+### **Foundational Infrastructure Achievements**
+
+We have established the technical bedrock necessary for distributed hardware design competition and verification:
+
+- **Decentralized Challenge Infrastructure:** Deployed a production-ready platform supporting the continuous optimization loop (Section 7), concurrent challenge execution, cryptographic authentication for all submissions, and automated TAO reward distribution.
+- **Integrated EDA Server Pipeline:** Established a comprehensive and reproducible validation pipeline by setting up **containerized EDA Servers** using Docker images for miners and validators. This infrastructure integrates industry-standard open-source tools—**Verilator** (for cycle-accurate simulation), **Yosys** (for synthesis), and **OpenLane** (for physical implementation)—ensuring objective, standardized verification and scoring for all designs.
+
+### **RISC-V Architectural IP Secured**
+
+Through successful completion of the **Sequential Extension Integration** phase, the network has secured a robust, verifiable RISC-V core:
+
+- **Complete RV32IMCK Core:** Successfully designed and fully validated a 32-bit RISC-V processor that cumulatively integrates the most critical extensions:
+  - **RV32I (Base Integer):** Core instruction set compliance.
+  - **RV32M (Multiply/Divide):** High-speed arithmetic unit integration.
+  - **RV32C (Compressed):** Implementation of compressed instructions for code density.
+  - **RV32K (Cryptography):** Full integration of the most critical cryptography extensions, including **AES encryption/decryption**, **SHA hashing**, and related bit-manipulation functions.
+- **Performance Benchmark:** The verified IP has demonstrated strong initial performance metrics, achieving **Full ISA compliance** with rigorous RISC-V specifications with basic max clock (without any timing optimization) 120MHz and SKY130nm. Closing this same design with a better smaller **node **like tsmc 22-28nm will definately give a clock close to 1GHz.
