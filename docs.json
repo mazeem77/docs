@@ -10,13 +10,109 @@
   "favicon": "/favicon.svg",
   "navigation": {
     "tabs": [
+       {
+        "tab": "White Paper",
+        "groups": [
+          {
+            "group": "Executive Summary",
+            "pages": [
+              "index",
+              "whitepaper/intro"
+            ]
+          },
+          {
+            "group": "Problem Statement",
+            "pages": [
+              "whitepaper/problem/index",
+              "whitepaper/problem/monoply",
+              "whitepaper/problem/edge",
+              "whitepaper/problem/verification"
+            ]
+          },
+          {
+            "group": "The ChipForge Solution",
+            "pages": [
+              "whitepaper/solution/index",
+              "whitepaper/solution/arch",
+              "whitepaper/solution/challenge",
+              "whitepaper/solution/metrics"
+            ]
+          },
+          {
+            "group": "Technical Architecture",
+            "pages": [
+              "whitepaper/technical/index",
+              "whitepaper/technical/challenge",
+              "whitepaper/technical/miner",
+              "whitepaper/technical/validator"
+            ]
+          },
+          {
+            "group": "Hardware Development Framework",
+            "pages": [
+              "whitepaper/framework"
+            ]
+          },
+          {
+            "group": "Evaluation Methodology",
+            "pages": [
+              "whitepaper/methodology/index",
+              "whitepaper/methodology/normal",
+              "whitepaper/methodology/dynamic",
+              "whitepaper/methodology/detailed"
+            ]
+          },
+          {
+            "group": "Incentive Mechanisms & Game Theory",
+            "pages": [
+              "whitepaper/incentive/index",
+              "whitepaper/incentive/loop",
+              "whitepaper/incentive/game"
+            ]
+          },
+          {
+            "group": "Current Progress & Achievements",
+            "pages": [
+              "whitepaper/progress/index",
+              "whitepaper/progress/infra",
+              "whitepaper/progress/risc"
+            ]
+          },
+          {
+            "group": "Roadmap",
+            "pages": [
+              "whitepaper/roadmap/index",
+              "whitepaper/roadmap/ph1",
+              "whitepaper/roadmap/ph2",
+              "whitepaper/roadmap/ph3",
+              "whitepaper/roadmap/ph4",
+              "whitepaper/roadmap/ph5"
+            ]
+          },
+          {
+            "group": "Economic Model & Market Analysis",
+            "pages": [
+              "whitepaper/economic/index",
+              "whitepaper/economic/market",
+              "whitepaper/economic/analysis",
+              "whitepaper/economic/creation"
+            ]
+          },
+          {
+            "group": "Conclusion",
+            "pages": [
+              "whitepaper/conclusion"
+            ]
+          }
+        ]
+      },
       {
         "tab": "Technical",
         "groups": [
           {
             "group": "Getting started",
             "pages": [
-              "index",
+              "system/index",
               "platform-components",
               "system-arch",
               "database",
